@@ -1,6 +1,6 @@
 import unittest
 from datetime import datetime
-from car_factory import CarFactory
+from model.car_factory import CarFactory
 
 
 class TestCalliope(unittest.TestCase):
