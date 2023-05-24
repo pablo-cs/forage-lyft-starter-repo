@@ -98,7 +98,7 @@ class TestGlissade(unittest.TestCase):
 class TestPalindrome(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 5)
+        last_service_date = today.replace(year=today.year - 3)
         warning_light_is_on = False
 
         car = CarFactory.create_palindrome(
@@ -108,7 +108,7 @@ class TestPalindrome(unittest.TestCase):
 
     def test_battery_should_not_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(year=today.year - 3)
+        last_service_date = today.replace(year=today.year - 1)
         warning_light_is_on = False
 
         car = CarFactory.create_palindrome(
@@ -134,7 +134,6 @@ class TestPalindrome(unittest.TestCase):
         car = CarFactory.create_palindrome(
             today, last_service_date, warning_light_is_on
         )
-        print(car.engine.warning_light_is_on)
         self.assertFalse(car.needs_service())
 
 
