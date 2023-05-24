@@ -134,6 +134,7 @@ class TestPalindrome(unittest.TestCase):
         car = CarFactory.create_palindrome(
             today, last_service_date, warning_light_is_on
         )
+        print(car.engine.warning_light_is_on)
         self.assertFalse(car.needs_service())
 
 
